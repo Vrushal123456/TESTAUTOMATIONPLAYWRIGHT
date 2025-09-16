@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import path from 'path';
 
 test('test FileUpload and DownLoad', async ({ page }) => {
   await page.goto("https://practice.expandtesting.com/upload");
@@ -29,8 +30,9 @@ test('File download', async ({ page }) => {
     page.click('a[href="download/some-file.txt"]') // action that initiates download
   ]);
 
+  
   // Save the downloaded file to a custom path
-  const downloadPath = path.join(__dirname, 'tests/sample.txt');
+  const downloadPath = path.join(process.cwd(), 'tests', 'sample.txt');
   await download.saveAs(downloadPath);
 
   console.log(`Downloaded file saved at: ${downloadPath}`);

@@ -1,7 +1,0 @@
-{
-
-"username":"[name='username']",
-"password":"[name='password']",
-"loginButton":"[type='submit']"
-
-}
